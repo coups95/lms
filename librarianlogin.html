@@ -30,10 +30,40 @@
         <button class="logoutBtn">Logout</button>
     </div>
 
+
+
+
+
     <script>
         document.getElementById("logout button").addEventListener("click", () => {
             window.location.href = "librarianlogin.html";
         });
+
+         // When the page loads
+    window.onload = function () {
+      const container = document.getElementById("librarian-cart");
+
+      // Get the book list from localStorage
+      const cart = JSON.parse(localStorage.getItem("checkoutList")) || [];
+
+      // If no books are found
+      if (cart.length === 0) {
+        container.innerHTML = "<p class='no-books'>No books were received.</p>";
+      } else {
+        // Create a list to display the books
+        const ul = document.createElement("ul");
+        cart.forEach(title => {
+          const li = document.createElement("li");
+          li.textContent = title;
+          ul.appendChild(li);
+        });
+        container.appendChild(ul);
+      }
+
+      // Clear the list after reading
+      localStorage.removeItem("checkoutList");
+    };
+
     </script>
 
 
