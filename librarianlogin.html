@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DASHBOARD</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="dashboard-container">
+    <h1>Welcome, Librarian 👋</h1>
+
+    <ul class="dashboard-cards">
+      <li><a href="books.html" class="card">📚 Books</a></li>
+
+      <li><a href="fine.html" class="card">💸 Fine</a></li>
+      
+      <li><a href="supplier.html" class="card">🛒 Supplier</a></li>
+      
+      <li><a href="approved.html" class="card">✔️ Approved books</a></li>
+    </ul>
+
+    <button class="logoutBtn" id="logoutBtn">Logout</button>
+  </div>
+
+  <script>
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      window.location.href = "librarianlogin.html";
+    });
+
+    </script>
+</body>
+</html>
+
+
